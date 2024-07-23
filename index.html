@@ -83,20 +83,23 @@
 
         function firebaseLogEventWithParams(eventName, params)
         {
-            if(firebase.analytics() == null){
-                console.log("skip")
-                return;
+            try {
+                firebase.analytics().logEvent(eventName, params);
+                console.log(`Event ${eventName} logged successfully`, params);
+            } catch (error) {
+                console.error(`Error logging event ${eventName}`, error);
             }
-            firebase.analytics().logEvent(eventName, params);
         }
+        
 
         function firebaseLogEvent(eventName)
         {
-            if(firebase.analytics() == null){
-                console.log("skip")
-                return;
+            try {
+                firebase.analytics().logEvent(eventName);
+                console.log(`Event ${eventName} logged successfully`);
+            } catch (error) {
+                console.error(`Error logging event ${eventName}`, error);
             }
-            firebase.analytics().logEvent(eventName);
         }
         
         const hideFullScreenButton = "";
