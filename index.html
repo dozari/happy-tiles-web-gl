@@ -9,15 +9,6 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics-compat.js"></script>
 
-    <script>
-        // Polyfill for process
-        window.process = {
-            env: {
-                NODE_ENV: 'production'
-            }
-        };
-    </script>
-
     <style>
         /* Убираем выделение по нажатию клавиш */
         canvas:focus {
@@ -61,6 +52,15 @@
     </div>
 
     <!-- Additional body modules -->
+
+    <script>
+        // Polyfill for process
+        window.process = {
+            env: {
+                NODE_ENV: 'production'
+            }
+        };
+    </script>
 
     <script type="text/javascript">
         // Your Firebase configuration
